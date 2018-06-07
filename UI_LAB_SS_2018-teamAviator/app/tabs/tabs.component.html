@@ -1,0 +1,33 @@
+<ActionBar class="action-bar">
+    <Label class="far fas action-bar-title" [text]="title"></Label>
+    <ActionItem (tap)="onNewServiceRequest()" ios.systemIcon="14" ios.position="right" text="New Request" android.position="popup"></ActionItem>
+    <ActionItem (tap)="logout()" ios.position="right" text="Logout" android.position="popup"></ActionItem>
+</ActionBar>
+
+<!--
+The TabView component provides a simple way to navigate between different views by
+tapping on some of the tabs or by swiping between the views.
+Learn more about the TabView component in this documentation article:
+http://docs.nativescript.org/angular/code-samples/ui/tab-view
+-->
+<TabView class="far fas" (selectedIndexChanged)="onSelectedIndexChanged($event)">
+    <StackLayout *tabItem="{title: '&#xf073;'}">
+        <Appointments></Appointments>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: '&#xf2bb;'}">
+        <Customers></Customers>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: '&#xf279;'}">
+        <Map></Map>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: '&#xf073;'}">
+        <Notes></Notes>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: '&#xf0d1;'}">
+        <Warehouse></Warehouse>
+    </StackLayout>
+</TabView>

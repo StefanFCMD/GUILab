@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        // Exclude genrated JavaScript and CSS
+        "**/*.js": { "when": "$(basename).ts"},
+        "**/*.css": { "when": "$(basename).scss"}        
+    }
+}

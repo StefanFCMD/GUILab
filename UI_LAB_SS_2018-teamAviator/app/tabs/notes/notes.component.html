@@ -1,0 +1,31 @@
+<GridLayout class="page page-content" width="100%">
+    <Label class="page-icon fas" text="&#xf46d;"></Label>
+    <Label class="page-placeholder" text="<!-- Notes content goes here -->"></Label>
+    
+	<ListView [items]="visibleNotes" (itemTap)="onItemTap($event)" width="100%">
+		<ng-template let-item="item" let-width="notes.length" width="100%">
+			<StackLayout orientation="vertical" width="100%">
+				<Label [text]="&nbsp;"></Label>
+				<StackLayout orientation="horizontal" width="100%">
+					<Label [text]="'ID:'" width="35%"></Label>
+					<Label [text]="item.id" textWrap="false" width="65%"></Label>
+				</StackLayout>
+				<StackLayout orientation="horizontal" width="100%">
+					<Label [text]="'Status:'" width="35%"></Label>
+					<Label [text]="item.status" textWrap="false" width="65%"></Label>
+				</StackLayout>
+				<StackLayout orientation="horizontal" width="100%">
+					<Label [text]="'Assigned by:'" width="35%"></Label>
+					<Label [text]="item.assignedBy" textWrap="false" width="65%"></Label>
+				</StackLayout>
+				<StackLayout orientation="horizontal" width="100%">
+					<Label [text]="'Message:'" width="35%"></Label>
+					<Label [text]="item.text" [textWrap]="item.wrapText" width="65%"></Label>
+				</StackLayout>
+				<Label [text]="&nbsp;"></Label>
+				<Label *ngIf="item.status === 'ToDo'" id="{{item.id}}" class="btn btn-primary btn-active" text="Close TODO" (tap)="onTap($event)"></Label>
+				<Label [text]="&nbsp;"></Label>
+			</StackLayout>
+		</ng-template>
+	</ListView>
+</GridLayout>

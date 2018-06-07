@@ -1,0 +1,6 @@
+# JavaScript files are generated from TypeScript files
+*.js
+
+# CSS style sheets are created from SCSS files
+*.css
+

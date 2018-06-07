@@ -1,0 +1,36 @@
+<ListView [items]="listItems" [itemTemplateSelector]="templateSelector" >
+
+    <!-- APPOINTMENT -->
+    <ng-template nsTemplateKey="appointment" let-item="item" let-i="index" let-odd="odd" let-even="even">
+        <StackLayout [class.odd]="odd" [class.even]="even">
+            <Label [text]='item.description'></Label>
+            <Label [text]='item.site.name + "   " + item.date'></Label>
+        </StackLayout>
+    </ng-template>
+
+    <!-- CUSTOMER -->
+    <ng-template nsTemplateKey="customer" let-item="item" let-i="index" let-odd="odd" let-even="even">
+        <DockLayout stretchLastChild="true" [class.odd]="odd" [class.even]="even">
+            <Label [text]="item.name" class="medium-spacing" dock="left"></Label>
+            <Label [text]="item.sites[0].name" class="medium-spacing" dock="right"></Label>            
+            <Label [text]="item.contact.firstName + ' ' + item.contact.lastName" class="medium-spacing"></Label>
+        </DockLayout>
+    </ng-template>
+
+    <!-- NOTES -->
+    <ng-template nsTemplateKey="note" let-item="item" let-i="index" let-odd="odd" let-even="even">
+        <StackLayout [class.odd]="odd" [class.even]="even">
+            <Label [text]='item.text'></Label>
+            <Label [text]='item.status'></Label>
+        </StackLayout>
+    </ng-template>
+
+    <!-- WAREHOUSE -->
+    <ng-template nsTemplateKey="sparePart" let-item="item" let-i="index" let-odd="odd" let-even="even">
+        <DockLayout stretchLastChild="true" [class.odd]="odd" [class.even]="even">
+            <Label [text]="item.partNumber" class="medium-spacing" dock="left"></Label>
+            <Label [text]="item.amount" class="medium-spacing" dock="right"></Label>            
+            <Label [text]="item.description" class="medium-spacing"></Label>
+        </DockLayout>
+    </ng-template>
+</ListView>

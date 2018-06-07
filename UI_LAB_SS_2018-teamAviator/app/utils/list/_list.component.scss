@@ -1,0 +1,61 @@
+ListView {
+    opacity: 0;
+}
+
+.visible {
+    animation-name: show;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.add-bar {
+    background-color: #206bce;
+    padding: 5 10;
+}
+
+.add-bar Image {
+    height: 15;
+    vertical-align: center;
+    margin-left: 10;
+    margin-right: 5;
+}
+
+TextField {
+    color: white;
+}
+
+.odd {
+    background-color: #ddd;
+}
+
+.even {
+    background-color: white;
+}
+
+.search-image {
+    padding: 3;
+    height: 60;
+    width: 60;
+}
+
+.delete-image {
+    padding: 5;
+    height: 20;
+    width: 20;
+    background-color: #CB1D00;
+    margin-right: 8;
+    float: right;
+}
+
+DockLayout Label {
+    vertical-align: center;
+}
